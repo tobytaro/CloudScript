@@ -297,7 +297,7 @@ handlers.RoomEventRaised = function (args) {
 
 // Triggerd when player login the game for the first time
  handlers.StartSetup = function(args) {
-     
+
 //     // Add user data
 //     var setUserData = server.UpdateUserData({
 //         PlayFabId: currentPlayerId,
@@ -311,16 +311,20 @@ handlers.RoomEventRaised = function (args) {
  // Like AddUserVirtualCurrency, it's safer to call UpdatePlayerStatistics from CloudScript
     var updateStatistics = server.UpdatePlayerStatistics({
         PlayFabId: currentPlayerId,
-        Statistics: [{
-            "StatisticName": "XP",
-            "Value": 0
-        }, {
+        Statistics: [
+            {
             "StatisticName": "Level",
-            "Value": 0
-        }, {
+            "Value": 20
+            },
+            {
+            "StatisticName": "Experience",
+            "Value": 8
+            },
+            {
             "StatisticName": "Achievement",
-            "Value": 0
-          }]
+            "Value": 1000
+            }
+         ]
     });
 
 }
