@@ -308,6 +308,14 @@ handlers.RoomEventRaised = function (args) {
 //         "Permission": "Public"
 // });
 
+// Grant starter bundle to player
+
+    var grantStarterBundle = server.GrantItemsToUser({
+        PlayFabId: currentPlayerId,
+        ItemIds: ["SB1"]
+ });
+
+
  // Like AddUserVirtualCurrency, it's safer to call UpdatePlayerStatistics from CloudScript
     var updateStatistics = server.UpdatePlayerStatistics({
         PlayFabId: currentPlayerId,
