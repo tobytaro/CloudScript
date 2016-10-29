@@ -307,6 +307,28 @@ handlers.RoomEventRaised = function (args) {
 //         },
 //         "Permission": "Public"
 // });
+// Grant Assistant Pet to player
+    var grantAssistantPet = server.GrantCharacterToUser ({
+        PlayFabId : currentPlayerId,
+        CharacterName : "Monkey",
+        CharacterType : "Fire"
+    });
+
+    var updatePetStatistics = server.UpdateCharacterStatistics ({
+        PlayFabId : currentPlayerId,
+        CharacterId : grantAssistantPet.CharacterId,
+        CharacterStatistics : [
+            {
+            "StatisticName": "Level",
+            "Value": 1 
+            },
+            {
+            "StatisticName": "Experience",
+            "Value": 0 
+            }
+        ]
+
+    });
 
 // Grant starter bundle to player
 
