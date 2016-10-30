@@ -307,21 +307,7 @@ handlers.RoomEventRaised = function (args) {
 //         },
 //         "Permission": "Public"
 // });
-// Grant Assistant Pet to player
-    var grantAssistantPet = server.GrantCharacterToUser ({
-        PlayFabId : currentPlayerId,
-        CharacterName : "Monkey",
-        CharacterType : "Fire"
-    });
 
-    var updatePetStatistics = server.UpdateCharacterStatistics ({
-        PlayFabId : currentPlayerId,
-        CharacterId : grantAssistantPet.response.CharacterId,
-        CharacterStatistics : {
-            "Level": 1,
-            "Experience": 0 
-        }
-    });
 
 // Grant starter bundle to player
 
@@ -348,6 +334,21 @@ handlers.RoomEventRaised = function (args) {
             "Value": 0
             }
          ]
+    });
+// Grant Assistant Pet to player
+    var grantAssistantPet = server.GrantCharacterToUser ({
+        PlayFabId : currentPlayerId,
+        CharacterName : "Monkey",
+        CharacterType : "Fire"
+    });
+
+    var updatePetStatistics = server.UpdateCharacterStatistics ({
+        PlayFabId : currentPlayerId,
+        CharacterId : grantAssistantPet.CharacterId,
+        CharacterStatistics : {
+            "Level": 1,
+            "Experience": 0 
+        }
     });
 
 }
