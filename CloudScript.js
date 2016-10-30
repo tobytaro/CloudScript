@@ -316,18 +316,11 @@ handlers.RoomEventRaised = function (args) {
 
     var updatePetStatistics = server.UpdateCharacterStatistics ({
         PlayFabId : currentPlayerId,
-        CharacterId : grantAssistantPet.CharacterId,
-        CharacterStatistics : [
-            {
-            "StatisticName": "Level",
-            "Value": 1 
-            },
-            {
-            "StatisticName": "Experience",
-            "Value": 0 
-            }
-        ]
-
+        CharacterId : grantAssistantPet.response.CharacterId,
+        CharacterStatistics : {
+            "Level": 1,
+            "Experience": 0 
+        }
     });
 
 // Grant starter bundle to player
