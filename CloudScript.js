@@ -313,7 +313,7 @@ handlers.RoomEventRaised = function (args) {
 
     var grantStarterBundle = server.GrantItemsToUser({
         PlayFabId: currentPlayerId,
-        ItemIds: ["SB1"]
+        ItemIds: ["SB001"]
  });
 
 
