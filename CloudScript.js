@@ -352,3 +352,15 @@ handlers.RoomEventRaised = function (args) {
     });
 
 }
+
+
+ handlers.PlayerGetItem = function(args) {
+
+     var itemId = args.ItemID;
+     var grantItem = server.GrantItemsToUser({
+        PlayFabId: currentPlayerId,
+        ItemIds: [itemId]
+      });
+ }
+
+
