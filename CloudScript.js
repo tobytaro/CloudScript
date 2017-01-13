@@ -357,10 +357,11 @@ handlers.RoomEventRaised = function (args) {
  handlers.PlayerGetItem = function(args) {
     try {
         var itemId = args.ItemID;
-        var grantItem = server.GrantItemsToUser({
+        var grantItemToUserResult = server.GrantItemsToUser({
             PlayFabId: currentPlayerId,
             ItemIds: [itemId]
         });
+        return grantItemToUserResult.ItemGrantResults;
      } catch(e) {
         var retObj = {};
         retObj["errorDetails"] = "Error: " + e;
@@ -369,17 +370,6 @@ handlers.RoomEventRaised = function (args) {
  }
 
 
- handlers.PlayerGetItem2 = function(args) {
-try {
-     var grantItem = server.GrantItemsToUser({
-        PlayFabId: currentPlayerId,
-        ItemIds: ["IN-SF002"]
-      });
-    }   catch(e) {
-        var retObj = {};
-        retObj["errorDetails"] = "Error: " + e;
-        return retObj;
-    }
- }
+
 
 
