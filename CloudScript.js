@@ -362,7 +362,7 @@ handlers.RoomEventRaised = function (args) {
         Statistics: [
             {
             "StatisticName": "Experience",
-            "Value": 100
+            "Value": xp
             }   
          ]
     });
