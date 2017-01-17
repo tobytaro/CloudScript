@@ -368,15 +368,18 @@ handlers.RoomEventRaised = function (args) {
         return retObj;
     }
 
+    var xp = args.XP;
      var updateStatistics = server.UpdatePlayerStatistics({
         PlayFabId: currentPlayerId,
         Statistics: [
             {
             "StatisticName": "Experience",
-            "Value": XP
+            "Value": xp
             }   
          ]
     });
+        
+     
  }
 
 
