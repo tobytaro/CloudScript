@@ -355,6 +355,18 @@ handlers.RoomEventRaised = function (args) {
 
 
  handlers.PlayerGetItem = function(args) {
+    
+     var xp = args.XP;
+     var updateStatistics = server.UpdatePlayerStatistics({
+        PlayFabId: currentPlayerId,
+        Statistics: [
+            {
+            "StatisticName": "Experience",
+            "Value": 100
+            }   
+         ]
+    });
+    
     try {
         var itemId = args.ItemID;
         var grantItemToUserResult = server.GrantItemsToUser({
@@ -368,16 +380,7 @@ handlers.RoomEventRaised = function (args) {
         return retObj;
     }
 
-    var xp = args.XP;
-     var updateStatistics = server.UpdatePlayerStatistics({
-        PlayFabId: currentPlayerId,
-        Statistics: [
-            {
-            "StatisticName": "Experience",
-            "Value": 100
-            }   
-         ]
-    });
+   
         
      
  }
