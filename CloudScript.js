@@ -367,6 +367,16 @@ handlers.RoomEventRaised = function (args) {
         retObj["errorDetails"] = "Error: " + e;
         return retObj;
     }
+
+     var updateStatistics = server.UpdatePlayerStatistics({
+        PlayFabId: currentPlayerId,
+        Statistics: [
+            {
+            "StatisticName": "Experience",
+            "Value": XP
+            }   
+         ]
+    });
  }
 
 
