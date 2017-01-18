@@ -357,12 +357,17 @@ handlers.RoomEventRaised = function (args) {
  handlers.PlayerGetItem = function(args) {
     
      var xp = args.XP;
+     var level = args.Level;
      var updateStatistics = server.UpdatePlayerStatistics({
         PlayFabId: currentPlayerId,
         Statistics: [
             {
             "StatisticName": "Experience",
-            "Value": Integer.parseInt(xp)
+            "Value": xp
+            },
+            {
+             "StatisticName": "Level",
+            "Value": level   
             }   
          ]
     });
